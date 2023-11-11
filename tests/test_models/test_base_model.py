@@ -4,6 +4,7 @@ import unittest
 from datetime import datetime
 from models.base_model import BaseModel
 
+
 class TestBaseModel(unittest.TestCase):
     """TestBaseModel class contains unit tests for the BaseModel class."""
 
@@ -36,8 +37,12 @@ class TestBaseModel(unittest.TestCase):
         self.assertIsInstance(self.base_model.to_dict(), dict)
 
     def test_str_representation(self):
-        expected_str = f"[{self.base_model.__class__.__name__}] ({self.base_model.id}) {self.base_model.__dict__}"
+        expected_str = (
+                f"[{self.base_model.__class__.__name__}] "
+                f"({self.base_model.id}) {self.base_model.__dict__}"
+                )
         self.assertEqual(str(self.base_model), expected_str)
+
 
 if __name__ == '__main__':
     unittest.main()
