@@ -171,7 +171,6 @@ class HBNBCommand(cmd.Cmd):
         if len(args) > 1 and args[0] in self.__classes:
             class_name = args[0]
             command = args[1].split('(')
-
             if command[0] in command_dict.keys():
                 command_args = " ".join(extract_and_format(command[1]))
                 full_command_args = f"{class_name} {command_args}"
@@ -187,7 +186,7 @@ class HBNBCommand(cmd.Cmd):
         if len(args) == 0:
             print("** class name missing **")
         elif args[0] not in self.__classes:
-            print("** class doesn't exists **")
+            print("** class doesn't exist **")
         elif len(args) < 2:
             print("** instance id missing **")
         else:
@@ -225,7 +224,7 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def do_EOF(self, arg):
-        """EOF command to exit the program"""
+        """EOF command to exit the program."""
         return True
 
 
